@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.pixel-text {
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+.pixel-button {
+  font-family: 'Press Start 2P', cursive;
+  border: none;
+  position: relative;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 66%,
+    95% 100%,
+    5% 100%,
+    0 66%
+  );
+  transition: all 0.2s ease;
+}
+
+.pixel-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(110%);
+}
+
+.pixel-button:active {
+  transform: translateY(2px);
+}
+
+.game-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.game-board {
+  display: grid;
+  gap: 1px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 
+    0 0 0 4px theme('colors.pink.500'),
+    0 0 0 8px theme('colors.pink.400'),
+    0 0 20px theme('colors.pink.500'),
+    inset 0 0 20px theme('colors.pink.400/20');
+}
+
+@keyframes singleHeart {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes multipleHearts {
+  0% {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-30vh) scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-60vh) scale(0);
+    opacity: 0;
+  }
+}
